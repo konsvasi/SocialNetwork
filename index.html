@@ -7,14 +7,22 @@
 		<body>
 			<h1>This is my social network project</h1>
 
-		<div id="loginForm">
+		
 			<form method="post" action="checkLogin.php" >
-				Username: <input type="text" name="Name" />
+				Username: <input type="text" name="Name" /><br />
 				Password <input type="password" name="Password" maxlength="10" />
 				<input type="submit" value="Login"/>
 			</form>
 
-		</div>
+		
+			<form method="post" action="signUp.php" >
+				Username: <input type="text" name="Name" /><br />
+				Password: <input type="password" name ="Password" maxlength="10" /><br />
+				Confirm password: <input type="password" name="conPass" maxlength="10" /><br /> 
+				<input type="submit" value="Sign Up" />
+			</form>
+		
+		
 		</body>
 
 
