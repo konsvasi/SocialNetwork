@@ -23,8 +23,32 @@ if($myPassword != $myConfirm){
 	header("refresh: 5; index.html");
 }
 else{
-	//check username in database
-	print "OK";
+	//check if username already exists in database
+	$query = "SELECT * FROM members WHERE Username='$myUsername'";
+	$result = mysqli_query($conn, $query);
+
+	$count  = mysqli_num_rows($result);
+
+	if($count == 0){
+		//username doesn't exist in database add
+		//add user
+		$query ="INSERT INTO members (Username, Password) VALUES ('{$myUsername}', '{$myPassword}')";
+		$result = mysqli_query($conn, $query);
+
+		//if some error occurs with the query I will print out the error message provided by mySQL
+		if(!$result)
+			die("Invalid query: " . mysqli_error());
+		else{
+			print "You are now a member or The Social Network";
+			header("refresh: 5; login_success.php");
+		}
+
+	}
+	else {
+		print "Username already exists";
+		header("refresh: 5; index.html");
+	}
+
 }
 
 
