@@ -2,6 +2,7 @@
 //checkLogin.php
 //Here is where I authenticate my users and if successfull I will show them their profile
 require_once 'login.php';
+require_once 'helperFunctions.php';
 
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -16,8 +17,11 @@ $myPassword = $_POST['Password'];
 sanitize($conn, $myUsername);
 sanitize($conn, $myPassword);
 
+/*
 //Query to see if user is in database
-$query = "SELECT * FROM members WHERE Username='$myUsername' AND Password='$myPassword'";
+$isCorrectPassword = password_verify($myPassword, $hashedPass);
+
+$query = "SELECT * FROM members WHERE Username='$myUsername' AND Password='$isCorrectPassword'";
 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
 $count = mysqli_num_rows($result);
@@ -31,15 +35,21 @@ if($count == 1){
 else{
 	echo "Wrong username or password";
 }
+*/
 
+$query = "SELECT * FROM members WHERE Username='$myUsername'";
+$result = mysqli_query($conn, $query);
+$count = mysqli_num_rows($result);
 
-
-
-
-//function to sanitize input
-function sanitize($conn, $val){
-	$val = stripslashes($val);
-	$val = mysqli_real_escape_string($conn, $val);
+if($count == 1){
+	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+	print "hashedPass = ${row['Password']}";
+	print "myPassword: " . $myPassword;
+	if(password_verify($myPassword, $row['Password'])){
+		print "Password match";
+	}
+else
+	print "The username or password do not match";
 }
 
 ?>

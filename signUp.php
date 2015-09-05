@@ -6,6 +6,7 @@
 //if all checks out I will add the user in the database
 //and redirect the user to his profile
 require_once 'login.php';
+require_once 'helperFunctions.php';
 
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -16,6 +17,11 @@ if(!$conn)
 $myUsername = $_POST['Name'];
 $myPassword = $_POST['Password'];
 $myConfirm = $_POST['conPass'];
+
+
+//sanitize input
+sanitize($conn, $myUsername);
+sanitize($conn, $myPassword);
 
 //check if the two passwords are the same
 if($myPassword != $myConfirm){
@@ -30,9 +36,12 @@ else{
 	$count  = mysqli_num_rows($result);
 
 	if($count == 0){
+		//hash password
+		$hashedPass = password_hash($myPassword, PASSWORD_DEFAULT);
+
 		//username doesn't exist in database add
-		//add user
-		$query ="INSERT INTO members (Username, Password) VALUES ('{$myUsername}', '{$myPassword}')";
+		//add user with the hashed password
+		$query ="INSERT INTO members (Username, Password) VALUES ('{$myUsername}', '{$hashedPass}')";
 		$result = mysqli_query($conn, $query);
 
 		//if some error occurs with the query I will print out the error message provided by mySQL
