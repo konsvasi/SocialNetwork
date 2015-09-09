@@ -43,10 +43,11 @@ $count = mysqli_num_rows($result);
 
 if($count == 1){
 	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-	print "hashedPass = ${row['Password']}";
-	print "myPassword: " . $myPassword;
+	print "hashedPass = ${row['Password']} <br />";
+	print "myPassword: " . $myPassword . "<br />";
 	if(password_verify($myPassword, $row['Password'])){
 		print "Password match";
+		header("refresh: 5; login_success.php");
 	}
 else
 	print "The username or password do not match";
