@@ -3,11 +3,22 @@
 ?>
 <!-- This php file will render the profile of the users -->
 
-<h1>Your profile </h1>
+<div id="nav">
+<ul>
+	<li><a href="#">Profile</a></li>
+	<li><a href="#">Photos</a></li>
+	<li><a href="#">Messages</a></li>
+</ul>
+</div>
+
+<div>
+	<img id="profilePic" src="pictures/default_profile.jpg" alt="Profile picture"/>
+
 
 <?php
 	if(isset($_SESSION['Username']))
-		echo "<h2>Hello ${_SESSION['Username']}</h2>";
+		echo "<h2 id='userName'>${_SESSION['Username']}</h2>";
 	else
 		echo "Error";
 ?>
+</div>
