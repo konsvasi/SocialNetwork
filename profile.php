@@ -1,6 +1,4 @@
-<?php
-	session_start();
-?>
+
 <!-- This php file will render the profile of the users -->
 
 <div id="nav">
