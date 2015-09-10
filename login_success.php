@@ -1,10 +1,3 @@
-<?php
-	/*session_start();
-
-	if(!session_is_registered(myusername)){
-		header("location:main_login.php");
-	}*/
-?>
 
 <html>
 <head>
@@ -12,7 +5,10 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-	<h1>Your profile</h1>
+	<?php
+		require_once 'profile.php';
+			
+	?>
 
 </body>
 </html>
