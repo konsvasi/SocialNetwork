@@ -1,3 +1,5 @@
+
+
 <?php
 //checkLogin.php
 //Here is where I authenticate my users and if successfull I will show them their profile
@@ -47,7 +49,9 @@ if($count == 1){
 	print "myPassword: " . $myPassword . "<br />";
 	if(password_verify($myPassword, $row['Password'])){
 		print "Password match";
+		$_SESSION['Username'] = $myUsername;
 		header("refresh: 5; login_success.php");
+
 	}
 else
 	print "The username or password do not match";
