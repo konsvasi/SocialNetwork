@@ -1,29 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>My social network project</title>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+		<!-- Bootstrap -->
+    	<link href="css/bootstrap.min.css" rel="stylesheet">
 	</head>
-		<body>
-			<h1>This is my social network project</h1>
 
-		
-			<form method="post" action="checkLogin.php" >
-				Username: <input type="text" name="Name" /><br />
-				Password <input type="password" name="Password" maxlength="10" />
-				<input type="submit" value="Login"/>
-			</form>
+	<body>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">The Social Network</a>
+				</div>
+			<center>
+				<form class="navbar-form navbar-right" role="form" method="post" action="checkLogin.php">
+				<div class="form-group">
+					<input type="text" class="form-control" name="Name" placeholder="Username">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" name="Password" maxlength="10" placeholder="Password">
+				</div>
+				<button type="submit" class="btn btn-default">Login</button>
+				</form>
+			</center>
+			</div>
+		</div>
 
-		
-			<form method="post" action="signUp.php" >
-				Username: <input type="text" name="Name" /><br />
-				Password: <input type="password" name ="Password" maxlength="10" /><br />
-				Confirm password: <input type="password" name="conPass" maxlength="10" /><br /> 
-				<input type="submit" value="Sign Up" />
-			</form>
-		
-		
-		</body>
 
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-7">
+					<h1>The best social network you've ever seen!!!</h1>
+        			<h3>Talk to friends, meet new people, share photos.</h3>
+        		</div>
 
+        		<div class="col-sm-5">
+        			<form class="form-horizontal" role="form" method="post" action="signUp.php">
+        				<div class="form-group">
+        					<label for="Username" class="col-sm-3 control-label">Username</label>
+        					<div class="col-sm-6">
+        						<input type="text" class="form-control" name="Name" placeholder="Username">
+        					</div>
+        				</div>
+        				<div class="form-group">
+        					 <label for="Password" class="col-sm-3 control-label">Password</label>
+        					 <div class="col-sm-6">
+        					 	<input type="password" class="form-control" name="Password" maxlength="10" placeholder="Password">
+        					 </div>
+        				</div>
+        				<div class="form-group">
+        					 <label for="conPass" class="col-sm-3 control-label">Confirm Password</label>
+        					 <div class="col-sm-6">
+        					 	<input type="password" class="form-control" name="conPass" maxlength="10" placeholder="Confirm password">
+        					 </div>
+        				</div>
+
+        				<div class="form-group">
+        					<div class="col-sm-offset-3 col-sm-10">
+        					<button type="submit" class="btn btn-default">Sign up</button>
+        					</div>
+        				</div>
+        			</form>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
