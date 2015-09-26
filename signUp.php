@@ -29,6 +29,11 @@ if($myPassword != $myConfirm){
 	header("refresh: 5; index.html");
 }
 else{
+	if($_POST['Password'] == ""){
+		print "You must enter a password\n";
+		header("refresh: 5; index.html");
+	}
+	else{
 	//check if username already exists in database
 	$query = "SELECT * FROM members WHERE Username='$myUsername'";
 	$result = mysqli_query($conn, $query);
@@ -57,7 +62,7 @@ else{
 		print "Username already exists";
 		header("refresh: 5; index.html");
 	}
-
+	}
 }
 
 
