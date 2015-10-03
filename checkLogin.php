@@ -1,4 +1,6 @@
-
+<?php
+	session_start();
+?>
 
 <?php
 //checkLogin.php
@@ -50,12 +52,12 @@ if($count == 1){
 	if(password_verify($myPassword, $row['Password'])){
 		print "Password match";
 		$_SESSION['Username'] = $myUsername;
-		header("refresh: 5; login_success.php");
+		header("refresh: 2; login_success.php");
 
 	}
 elseif($count == 0) {
 	print "This username does not exist.";
-	header("refresh: 5; index.html");
+	header("refresh: 2; index.html");
 	}
 }
 

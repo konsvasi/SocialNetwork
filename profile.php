@@ -28,11 +28,12 @@
     	<div class="row">
     		<div class="col-md-4">
     			<img src="pictures/default_profile.jpg" class="img-rounded">
-    			<h1>Username</h1>
+    			<h1><?php print($_SESSION['Username']) ?></h1>
     		</div>
     		<div class="col-md-8">
     			<h1>Hello</h1>
     			<p>Here I will create the textarea for the status updates of the user</p>
+    			
     		</div>	
     	</div>
 
