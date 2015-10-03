@@ -53,8 +53,10 @@ if($count == 1){
 		header("refresh: 5; login_success.php");
 
 	}
-else
-	print "The username or password do not match";
+elseif($count == 0) {
+	print "This username does not exist.";
+	header("refresh: 5; index.html");
+	}
 }
 
 ?>
