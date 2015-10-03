@@ -11,3 +11,12 @@ function validateEmail(email, output) {
     if(!re.test(email))
     	document.getElementById(output).innerHTML = "Use a valid email address";
 }
+
+function editProfilePic(output){
+	//document.getElementById(output).innerHTML = "Edit";
+	var x = document.createElement("Button");
+	var t = document.createTextNode("Edit");
+	x.appendChild(t);
+	document.getElementById(output).appendChild(x);
+	
+}
