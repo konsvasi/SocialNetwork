@@ -27,16 +27,30 @@
     <div class="container-fluid">
     	<div class="row">
     		<div class="col-md-4">
-    			<img onmouseenter="editProfilePic('out')" src="pictures/default_profile.jpg" class="img-rounded">
+    			<img onmouseover="editProfilePic('out')" src="pictures/default_profile.jpg" class="img-rounded">
                 <div id="out"></div>
     			<h1><?php print($_SESSION['Username']) ?></h1>
     		</div>
     		<div class="col-md-8">
     			<h1>Hello</h1>
     			<p>Here I will create the textarea for the status updates of the user</p>
-                
-    			
+                <form class="form-horizontal" role="form" method="post" action="status.php">
+                        <textarea rows="4" cols="50" name="status">
+What's on your mind?
+                        </textarea>
+                        <input type="submit" value="Post">
+                </form>
     		</div>	
     	</div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <p>Nothing for the moment</p>
+            </div>
+            <div class="col-md-8">
+                <?php require_once 'showStatus.php'; ?>
+                
+            </div>
+        </div>
 
     </div>

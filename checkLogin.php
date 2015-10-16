@@ -47,11 +47,14 @@ $count = mysqli_num_rows($result);
 
 if($count == 1){
 	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-	print "hashedPass = ${row['Password']} <br />";
+	print "hashedPass: ${row['Password']} <br />";
 	print "myPassword: " . $myPassword . "<br />";
+	print "UserID: ${row['ID']} <br />";
 	if(password_verify($myPassword, $row['Password'])){
 		print "Password match";
 		$_SESSION['Username'] = $myUsername;
+		$userID = $row['ID'];
+		$_SESSION['UserID'] = $userID;
 		header("refresh: 2; login_success.php");
 
 	}

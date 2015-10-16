@@ -20,7 +20,6 @@
 </head> 
 <body>
 	<?php
-		//require_once 'profile.php';
 		require_once 'profile.php';	
 	?>
 
