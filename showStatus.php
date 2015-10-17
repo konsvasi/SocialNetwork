@@ -16,7 +16,8 @@ if(!$result)
 
 if($count > 0){
 	while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-		print "${row['Status']}<br>";
+		echo "<p id='status'>${row['Status']}</p>";
+		echo "<br>";
 	}
 
 }

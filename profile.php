@@ -27,6 +27,7 @@
     <div class="container-fluid">
     	<div class="row">
     		<div class="col-md-4">
+                <!--Here is the profile picture, if he changes it I have to change the path to the new picture -->
     			<img onmouseover="editProfilePic('out')" src="pictures/default_profile.jpg" class="img-rounded">
                 <div id="out"></div>
     			<h1><?php print($_SESSION['Username']) ?></h1>

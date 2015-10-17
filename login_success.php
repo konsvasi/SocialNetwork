@@ -7,6 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Profile</title>
+	<link rel="stylesheet" href="stylesheet.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<script type="text/javascript" src="functions.js"></script>
