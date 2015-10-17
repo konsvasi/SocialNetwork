@@ -18,5 +18,21 @@ function editProfilePic(output){
 	var t = document.createTextNode("Edit");
 	x.appendChild(t);
 	document.getElementById(output).appendChild(x);
-	
+	x.addEventListener('click', function(){
+		//This is a test function to see if the new button works
+		//When the edit button is being clicked a form will appear 
+		//that prompts the user to add a new profile picture
+		//This picture will be uploaded to the server and later will be displayed
+		//in the user profile
+		var a = document.createElement("Button");
+		var y = document.createTextNode("New text");
+		a.appendChild(y);
+		document.getElementById(output).appendChild(a);
+
+	})
 }
+
+function hideButton(output){
+	//document.getElementById(output).style.visibility = "hidden";
+	document.getElementById(output).remove();
+	}
