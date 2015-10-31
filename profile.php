@@ -1,6 +1,13 @@
 
 <!-- This php file will render the profile of the users -->
 
+<!-- jquery functions -->
+<script>
+    $(document).ready(function(){
+        $(#newProfilePic).hide();
+    });
+</script>
+
  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="navbar-header">
             <a class="navbar-brand" href="index.html">The Social Network</a>
@@ -29,11 +36,20 @@
     		<div class="col-md-4">
                 <!--Here is the profile picture, if he changes it I have to change the path to the new picture -->
                 <div id="profilePic">
-    			     <img onmouseover="editProfilePic('out')" onmouseout="hideButton('out')" src="pictures/default_profile.jpg" class="img-rounded">
-                    <div id="out"></div>
+    			     <!-- <img onmouseover="editProfilePic('out')" onmouseout="hideButton('out')" src="pictures/default_profile.jpg" class="img-rounded"> -->
+                     <img onmouseover="editProfilePic('out')" src="pictures/default_profile.jpg" class="img-rounded">
+                     <div id="out"></div>
                 </div>
                 
     			<h1><?php print($_SESSION['Username']) ?></h1>
+
+                <div id="newProfilePic">
+                    <form action="upload.php" method="post" enctype="multipart/form-data" style="hidden">
+                        Select image to upload:
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Upload Image" name="submit">
+                    </form>
+                </div>
     		</div>
     		<div class="col-md-8">
     			<h1>Hello</h1>

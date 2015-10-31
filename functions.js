@@ -16,6 +16,7 @@ function editProfilePic(output){
 	//document.getElementById(output).innerHTML = "Edit";
 	var x = document.createElement("Button");
 	var t = document.createTextNode("Edit");
+	x.id = "btnEdit";
 	x.appendChild(t);
 	document.getElementById(output).appendChild(x);
 	x.addEventListener('click', function(){
@@ -24,15 +25,15 @@ function editProfilePic(output){
 		//that prompts the user to add a new profile picture
 		//This picture will be uploaded to the server and later will be displayed
 		//in the user profile
-		var a = document.createElement("Button");
-		var y = document.createTextNode("New text");
-		a.appendChild(y);
-		document.getElementById(output).appendChild(a);
-
+		//var a = document.createElement("Button");
+		//var y = document.createTextNode("New text");
+		//a.appendChild(y);
+		//document.getElementById(output).appendChild(a);
+		document.getElementById("newProfilePic").style.visibility = "visible";
 	})
 }
 
 function hideButton(output){
 	//document.getElementById(output).style.visibility = "hidden";
-	document.getElementById(output).remove();
+	document.getElementById("btnEdit").remove();
 	}

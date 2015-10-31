@@ -39,6 +39,11 @@ body {
 
 #out {
 	position: absolute;
+	top: 0px;
+}
+
+#newProfilePic {
+	visibility: hidden;
 }
 
 #status {
