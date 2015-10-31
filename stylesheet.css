@@ -37,6 +37,11 @@ body {
 	position: relative;
 }
 
+#profilePicture {
+	width: 160px;
+	height: 160px;
+}
+
 #out {
 	position: absolute;
 	top: 0px;
