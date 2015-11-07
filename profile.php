@@ -59,7 +59,7 @@
     			<h1>Hello</h1>
     			<p>Here I will create the textarea for the status updates of the user</p>
                 <form class="form-horizontal" role="form" method="post" action="status.php">
-                        <textarea rows="4" cols="50" name="status">
+                        <textarea rows="4" cols="50" name="status" id = "updater">
 What's on your mind?
                         </textarea>
                         <input type="submit" value="Post">
@@ -71,7 +71,8 @@ What's on your mind?
             <div class="col-md-4">
                 <p>Nothing for the moment</p>
             </div>
-            <div class="col-md-8">
+            <div id = "status" class="col-md-8">
+                <!-- The status updates appear here -->
                 <?php require_once 'showStatus.php'; ?>
                 
             </div>

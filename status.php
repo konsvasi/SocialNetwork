@@ -16,6 +16,7 @@ if(!isset($myStatus))
 //Insert status into database
 $query = "INSERT INTO statusupdates (Status, UserID) VALUES ('{$myStatus}', '{$myUserID}')";
 $result = mysqli_query($conn, $query);
+echo 1;
 
 
 
