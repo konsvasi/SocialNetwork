@@ -17,10 +17,7 @@
                 <li><a href="#">Messages</a></li>
                 <li><a href="#">Photos</a></li>
             </ul>
-            <!-- <ul class="nav navbar-nav navbar-right">
-                <li><a href="logout.php">Log out</a></li>
-            </ul>
-        	-->
+            
         	<div class="container-fluid">
         	<ul class="nav navbar-nav navbar-right">
         		<button type="button" class="btn btn-default navbar-btn">
@@ -30,7 +27,6 @@
         	</div>
         </div>
     </nav>
-
     <div class="container-fluid">
     	<div class="row">
     		<div class="col-md-4">

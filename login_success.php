@@ -22,6 +22,7 @@
 </head> 
 <body>
 	<?php
+		//require_once 'navBar.php';
 		require_once 'profile.php';	
 	?>
 
