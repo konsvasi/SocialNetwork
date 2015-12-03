@@ -8,7 +8,7 @@ $myUserID = $_SESSION['UserID'];
 
 $conn = new mysqli($servername, $username, $password, $database);
 
-$query = "SELECT imagePath FROM profilepictures WHERE  UserID='{$myUserID}'";
+$query = "SELECT imagePath FROM profilepictures WHERE  UserID='{$myUserID}' AND isProfilePicture = '1'";
 $result = mysqli_query($conn, $query);
 
 $count = mysqli_num_rows($result);
