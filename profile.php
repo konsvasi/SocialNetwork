@@ -53,7 +53,6 @@
     		</div>
     		<div class="col-md-8">
     			<h1>Hello</h1>
-    			<p>Here I will create the textarea for the status updates of the user</p>
                 <form class="form-horizontal" role="form" method="post" action="status.php">
                         <textarea rows="4" cols="50" name="status">
 What's on your mind?
